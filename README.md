@@ -20,10 +20,10 @@ and it's clean enough as an example.
 
 Well, just what's needed. It provides an alternate version of the startup code
 (`si_prc.pp`) used by Free Pascal, which bypasses the entire System unit
-initialization, and jumps directly into a custom user `main` function. Then
-- as none of the original unit infrastructure is being referred to by active
-code - the linker just optimizes all of it away and none of it lands in the
-final executable.
+initialization, and jumps directly into a custom user `main` function.
+Then - as none of the original unit infrastructure is being referred to by
+active code - the linker just optimizes all of it away and none of it lands in 
+the final executable.
 
 ## Files
 
