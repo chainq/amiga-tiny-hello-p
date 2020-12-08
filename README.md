@@ -32,6 +32,8 @@ and none of it lands in the executable.
 Needs (means: it was only tested with)  Free Pascal current SVN trunk. Not tested
 with the release version. You also need `vasm` and `vlink` for this to work.
 
+The resulting executable should run on any Amiga.
+
 ## Disclaimer
 
 I actually don't encourage this kind of programming. Free Pascal provides a
