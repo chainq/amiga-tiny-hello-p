@@ -12,13 +12,18 @@ C compilers for the same platform.
 The result I've got is actually 348 bytes for a "Hello, world!" when compiled
 for a 68000, and 332 bytes when compiled for a 68020.
 
+The size could be reduced further by using the V36-only PutStr() call, and
+doing some even messier hacks, but wanted something which works on every Amiga,
+and it's clean enough as an example.
+
 ## So, what kind of magic is this?
 
 Well, just what's needed. It provides an alternate version of the startup code
-used by Free Pascal, which bypasses the entire System unit initialization, and
-jumps directly into a custom user `main` function. Then - as none of the original
-unit infrastructure is being referred to - the linker just optimizes all of it away,
-and none of it lands in the executable.
+(`si_prc.pp`) used by Free Pascal, which bypasses the entire System unit
+initialization, and jumps directly into a custom user `main` function. Then
+- as none of the original unit infrastructure is being referred to by active
+code - the linker just optimizes all of it away and none of it lands in the
+final executable.
 
 ## Files
 
@@ -44,5 +49,5 @@ write programs this way. If you try to create more complex apps, you'll also lik
 to encounter various issues, which are difficult to understand and resolve, unless
 you're intimately familiar with both AmigaOS and Free Pascal internals.
 
-But it hopefully makes a point. A similar technique can be used on most operating
-systems, actually.
+But it hopefully makes a point. A similar technique can be used with Free Pascal on
+most operating systems, not only Amiga actually.
