@@ -1,5 +1,4 @@
 # Tiny "Hello, World!" in Free Pascal for Amiga
-# ---------------------------------------------
 
 This is a silly size coding experiment, to figure out what's the smallest
 executable size which is possible with the Amiga/m68k version of Free Pascal.
@@ -13,7 +12,7 @@ C compilers for the same platform.
 The result I've got is actually 348 bytes for a "Hello, world!" when compiled
 for a 68000, and 332 bytes when compiled for a 68020.
 
-## So, what kind of magic this is doing?
+## So, what kind of magic is this?
 
 Well, just what's needed. It provides an alternate version of the startup code
 used by Free Pascal, which bypasses the entire System unit initialization, and
