@@ -21,14 +21,14 @@ const
 
 function main: longint; public name '_main';
 begin
+  main:=1;
   DOSBase:=OpenLibrary('dos.library',0);
   if assigned(DOSBase) then
     begin
       DOSWrite(DOSOutput,@HelloText[1],length(HelloText));
       CloseLibrary(DOSBase);
+      main:=0;
     end;
-
-  main:=ord(not assigned(DOSBase));
 end;
 
 begin
