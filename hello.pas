@@ -1,8 +1,8 @@
 program hello;
 
 var
+  ExecBase: Pointer absolute 4;
   DOSBase: pointer;
-  ExecBase: pointer; external name '_ExecBase';
 
 { * declare used OS functions. alternatively one could copy the includes
     from the system unit, and just $INCLUDE it. but I wanted to make this
@@ -19,15 +19,15 @@ function DOSWrite(fileh : LongInt location 'd1';
 const
     HelloText: string[15] = 'Hello, World!'#10;
 
-function main: longint; public name '_main';
+function start: longint; cdecl; public name '_start';
 begin
-  main:=1;
+  start:=1;
   DOSBase:=OpenLibrary('dos.library',0);
   if assigned(DOSBase) then
     begin
       DOSWrite(DOSOutput,@HelloText[1],length(HelloText));
       CloseLibrary(DOSBase);
-      main:=0;
+      start:=0;
     end;
 end;
 
