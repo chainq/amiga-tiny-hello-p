@@ -9,10 +9,10 @@ and stick to the AmigaOS API (much like you'd do in assembly), you can actually
 produce really tiny executables with Free Pascal, which can compete with most
 C compilers for the same platform.
 
-The result I've got is actually ~348~ ~308~ ~304~ ~296~ 252 bytes for a "Hello, world!" when
-compiled for a 68000, and 252 bytes when compiled for a 68020. This difference
+The result I've got is actually ~348~ ~308~ ~304~ ~296~ ~252~ 244 bytes for a "Hello, world!" when
+compiled for a 68000~, and 252 bytes when compiled for a 68020. This difference
 actually doesn't even come from the compiled code, but somehow vlink links a
-slightly different binary container for the 68020. This is to be investigated.
+slightly different binary container for the 68020. This is to be investigated~.
 
 The size could be reduced further by using the V36-only PutStr() call, and
 doing some even messier hacks, but wanted something which works on every Amiga,
